@@ -17,11 +17,12 @@ app
 
 app
   .use(async (ctx, next) => {
-    console.log('/////////////////////')
-    ctx.body = JSON.stringify(ctx.request, null, 2)
+    ctx.body = JSON.stringify(ctx, null, 2)
+    ctx.body += '\n\n'
     return next()
   })
-
 app.listen(3000)
+console.log('listen on port 3000')
+console.log('serve on http://localhost:3000')
 
 export default app

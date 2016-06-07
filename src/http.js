@@ -15,7 +15,6 @@ const anyStatus = (ctx, next) => {
   }
 
   ctx.status = parseInt(status)
-  console.log(next)
   return next()
 }
 
@@ -25,7 +24,6 @@ const anyHeaders = (ctx, next) => {
   if (!ctx.get('Access-Control-Allow-Origin')) {
     ctx.set('Access-Control-Allow-Origin', '*')
   }
-  console.log(next)
   return next()
 }
 
