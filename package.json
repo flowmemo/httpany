@@ -13,7 +13,6 @@
   "license": "MIT",
   "devDependencies": {
     "ava": "^0.15.1",
-    "babel-cli": "^6.9.0",
     "babel-eslint": "^6.0.4",
     "eslint": "^2.10.2",
     "eslint-config-standard": "^5.3.1",
