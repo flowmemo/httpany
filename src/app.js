@@ -1,16 +1,15 @@
 'use strict'
 import Koa from 'koa'
-import {anyStatus, anyHeaders, log} from './http'
+import {anyStatus, anyHeaders} from './http'
 import Router from 'koa-router'
-var app = new Koa()
+const app = new Koa()
 
-var router = new Router({
+const router = new Router({
   prefix: '/any'
 })
 router.get('/:status', anyHeaders)
 router.get('/:status', anyStatus)
 
-log()
 app
   .use(router.routes())
   .use(router.allowedMethods())

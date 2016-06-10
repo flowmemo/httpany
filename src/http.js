@@ -1,16 +1,8 @@
 'use strict'
-// import route from 'koa-route'
-// import qs from 'http'
 
 const anyStatus = (ctx, next) => {
-  console.log('anystatus')
-  console.log(ctx.params)
-
-  var status = ctx.params.status
-  console.log(status === 'default')
-
+  const status = ctx.params.status
   if (status === 'default') {
-    console.log('defualt status')
     return next()
   }
 
@@ -19,7 +11,6 @@ const anyStatus = (ctx, next) => {
 }
 
 const anyHeaders = (ctx, next) => {
-  console.log(ctx.params)
   ctx.set(ctx.query)
   if (!ctx.get('Access-Control-Allow-Origin')) {
     ctx.set('Access-Control-Allow-Origin', '*')
@@ -27,7 +18,4 @@ const anyHeaders = (ctx, next) => {
   return next()
 }
 
-const log = () => {
-  // console.log('========-==========')
-}
-export {anyStatus, anyHeaders, log}
+export {anyStatus, anyHeaders}
