@@ -1,17 +1,26 @@
 'use strict'
 
-const anyStatus = (ctx, next) => {
+function anyStatus (ctx, next) {
   const status = ctx.params.status
   if (status === 'default') {
     return next()
   }
-
-  ctx.status = parseInt(status)
+  try {
+    ctx.status = parseInt(status)
+  } catch (err) {
+    console.log(err)
+    ctx.status = 501
+  }
   return next()
 }
 
-const anyHeaders = (ctx, next) => {
-  ctx.set(ctx.query)
+function anyHeaders (ctx, next) {
+  try {
+    ctx.set(ctx.query)
+  } catch (err) {
+    console.log(err)
+    ctx.status = 501
+  }
   if (!ctx.get('Access-Control-Allow-Origin')) {
     ctx.set('Access-Control-Allow-Origin', '*')
   }
