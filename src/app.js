@@ -1,14 +1,14 @@
 'use strict'
 import Koa from 'koa'
-import {anyStatus, anyHeaders} from './http'
 import Router from 'koa-router'
+import * as httpAny from 'koa-httpany'
 const app = new Koa()
 
 const router = new Router({
   prefix: '/any'
 })
-router.get('/:status', anyHeaders)
-router.get('/:status', anyStatus)
+router.get('/', httpAny.anyHeader)
+router.get('/', httpAny.anyStatus)
 
 app
   .use(router.routes())
