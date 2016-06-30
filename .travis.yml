@@ -6,3 +6,5 @@ node_js:
 before_install:
   - npm install -g npm@latest
 script: npm run build && npm test
+after_success:
+    - './node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls'
