@@ -1,12 +1,12 @@
 {
   "name": "httpany",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Generate any http status and headers",
   "main": "./lib/app.js",
   "bin": {
     "httpany": "./bin/cli.js"
   },
-  "files":["src"],
+  "files":["src", "bin"],
   "scripts": {
     "postinstall": "npm run build",
     "test": "nyc ava ",
