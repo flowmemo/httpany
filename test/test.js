@@ -4,11 +4,11 @@ import test from 'ava'
 import fetch from 'node-fetch'
 import http from 'http'
 import querystring from 'querystring'
-require('../lib/app')
-
+const createApp = require('..').createApp
+const app = createApp('./fixtures', {})
 const PORT = 3000
-// app.listen(PORT)
-const baseUrl = `http://localhost:${PORT}/any/`
+app.listen(PORT)
+const baseUrl = `http://localhost:${PORT}/`
 test('default response', async t => {
   const qs = querystring.stringify({ status: 'default' })
   let p1 = fetch(baseUrl)
@@ -83,4 +83,15 @@ test('invalid header', async t => {
   const qs = querystring.stringify({ 'statufd?/=-fs': 'fsasdf/fd]ds\fds1325!@#$%^&*)=?' })
   const res = await fetch(baseUrl + '?' + qs)
   t.is(res.status, 501)
+})
+
+test('get index.html', async t => {
+  const res = await fetch(baseUrl)
+  const text = await res.text()
+  t.is(text, 'This is index.html')
+})
+
+test('get nowhere.html', async t => {
+  const res = await fetch(baseUrl + 'nowhere.html')
+  t.is(res.status, 404)
 })

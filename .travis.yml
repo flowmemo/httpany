@@ -4,7 +4,12 @@ node_js:
   - '5'
   - '4'
 before_install:
+  - npm set progress=false
   - npm install -g npm@latest
+  - npm config ls
 script: npm run build && npm test
 after_success:
     - './node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls'
+cache:
+  directories:
+  - node_modules

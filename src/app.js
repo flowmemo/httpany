@@ -1,27 +1,23 @@
 'use strict'
 import Koa from 'koa'
-import Router from 'koa-router'
 import * as httpAny from 'koa-httpany'
-const app = new Koa()
+import koaStatic from 'koa-static'
+function createApp (root, opts) {
+  const app = new Koa()
+  app
+    .use(httpAny.anyHeader)
+    .use(httpAny.anyStatus)
+    .use(koaStatic(root, opts))
+    .use((ctx, next) => {
+      // do not change original status
+      // "If response.status has not been set, Koa will automatically set the status to 200 or 204."
+      const originStatus = ctx.status
+      ctx.body = JSON.stringify(ctx, null, 2)
+      ctx.body += '\n'
+      ctx.status = originStatus
+      return next()
+    })
 
-const router = new Router({
-  prefix: '/any'
-})
-router.get('/', httpAny.anyHeader)
-router.get('/', httpAny.anyStatus)
-
-app
-  .use(router.routes())
-  .use(router.allowedMethods())
-
-app
-  .use(async (ctx, next) => {
-    ctx.body = JSON.stringify(ctx, null, 2)
-    ctx.body += '\n\n'
-    return next()
-  })
-app.listen(3000)
-console.log('listen on port 3000')
-console.log('serve on http://localhost:3000')
-
-export default app
+  return app
+}
+export { createApp }
