@@ -4,7 +4,7 @@ import test from 'ava'
 import fetch from 'node-fetch'
 import http from 'http'
 import querystring from 'querystring'
-const createApp = require('..').createApp
+const createApp = require('..')
 const app = createApp('./fixtures', {})
 const PORT = 3000
 app.listen(PORT)

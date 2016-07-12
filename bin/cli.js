@@ -2,7 +2,7 @@
 'use strict'
 const meow = require('meow')
 const chalk = require('chalk')
-const createApp = require('..').createApp
+const createApp = require('..')
 
 const cli = meow(`
     Usage

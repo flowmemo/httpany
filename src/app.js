@@ -1,23 +1,24 @@
 'use strict'
-import Koa from 'koa'
-import * as httpAny from 'koa-httpany'
-import koaStatic from 'koa-static'
+const koa = require('koa')
+const httpAny = require('koa-httpany')
+const koaStatic = require('koa-static')
 function createApp (root, opts) {
-  const app = new Koa()
+  const app = koa()
   app
     .use(httpAny.anyHeader)
     .use(httpAny.anyStatus)
     .use(koaStatic(root, opts))
-    .use((ctx, next) => {
+    .use(function * (next) {
       // do not change original status
       // "If response.status has not been set, Koa will automatically set the status to 200 or 204."
+      let ctx = this
       const originStatus = ctx.status
       ctx.body = JSON.stringify(ctx, null, 2)
       ctx.body += '\n'
       ctx.status = originStatus
-      return next()
+      return yield next
     })
 
   return app
 }
-export { createApp }
+module.exports = createApp
