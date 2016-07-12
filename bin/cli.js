@@ -11,6 +11,7 @@ const info = `
 
   Options
     --port, -p Listening port, default is 3000
+    --help, -h Show help
 
     The following options are from koa-static:
     --maxage Browser cache max-age in milliseconds. defaults to 0
@@ -22,7 +23,7 @@ const info = `
   Examples
     $ httpany webfolder --maxage 60000 --index index.html --gzip=false
 `
-if (argv._.length === 0) return console.log(info)
+if (argv._.length === 0 || argv.help || argv.h) return console.log(info)
 if (argv._.length > 1) throw Error('you can only serve one root directory!')
 const rootPath = argv._[0]
 const port = argv.port || argv.p || 3000
