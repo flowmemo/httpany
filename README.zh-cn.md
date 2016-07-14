@@ -1,39 +1,40 @@
 # httpany
-A static file server for front-end learner.
+方便前端学习者使用的静态文件服务器
 
 [![Travis branch](https://img.shields.io/travis/flowmemo/httpany/master.svg?style=flat-square)](https://travis-ci.org/flowmemo/httpany)
 [![AppVeyor branch](https://img.shields.io/appveyor/ci/flowmemo/httpany/master.svg?style=flat-square&label=Win%20Test)](https://ci.appveyor.com/project/flowmemo/httpany/branch/master)
 [![Coveralls branch](https://img.shields.io/coveralls/flowmemo/httpany/master.svg?style=flat-square)](https://coveralls.io/github/flowmemo/httpany?branch=master)
 
-## Description
-Front-end learners often need to server static files on their computer.
-Sometimes `python3 -m http.server` is enough, but there are many situations where you may want the static server response a specific header(e.g CORS and Timing-Allow headers). This tool can make it easy by control http headers and status code using query string.
+## 介绍
+前端学习着经常需要在电脑上托管静态文件.
+有时候一句 `python3 -m http.server` 就足够了, 但是很多情况下你会想让服务器返回特定的http header(例如CORS and Timing-Allow headers). 这个工具可以让你通过querystring来控制服务器响应的http header和状态码
 
-## Example
+## 示例
 ```shell
 $ npm install httpany -g
 $ httpany yourDirectory
 "yourDirectory" is served on http://localhost:3000
 options is: {"root":"/path/to/yourDirectory","index":"index.html"}
 ```
-Access http://localhost:3000/?foo=bar then the response header will contain `foo: bar`. 
+访问 http://localhost:3000/?foo=bar http响应的header中会包含 `foo: bar`. 
 
-Note that you can also set status code by `status` key.
+你也可以通过在querystring中设置status来控制响应的http状态码.
 
-## Usage
+## 用法
 ```shell
-$ httpany <root path> [options]
+$ httpany <路径> [参数]
 ```
-### Options
---port, -p Listening port, default is 3000
---help, -h Show help
 
-The following options are from koa-static:
+### 参数
+--port, -p 监听端口，默认是3000
+--help, -h 显示帮助
+
+下面的参数来自koa-static:
 --maxage Browser cache max-age in milliseconds. defaults to 0
 --hidden Allow transfer of hidden files. defaults to false
 --index Default file name, defaults to 'ipndex.html'
 --defer If true, serves after return next(), allowing any downstream middleware to respond first.
 --gzip Try to serve the gzipped version of a file automatically when gzip is supported by a client and if the requested file with .gz extension exists. defaults to true.
 
-## License
+## 许可
 MIT © [flowmemo](http://weibo.com/flowmemo)

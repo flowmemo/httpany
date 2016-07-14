@@ -7,7 +7,7 @@ const minimist = require('minimist')
 const argv = minimist(process.argv.slice(2))
 const info = `
   Usage
-    $ httpany <root path> 
+    $ httpany <root path> [options]
 
   Options
     --port, -p Listening port, default is 3000
