@@ -1,4 +1,5 @@
 # httpany
+[English](https://github.com/flowmemo/httpany/blob/master/README.md)|**中文**  
 方便前端学习者使用的静态文件服务器
 
 [![Travis branch](https://img.shields.io/travis/flowmemo/httpany/master.svg?style=flat-square)](https://travis-ci.org/flowmemo/httpany)
@@ -26,15 +27,15 @@ $ httpany <路径> [参数]
 ```
 
 ### 参数
---port, -p 监听端口，默认是3000
---help, -h 显示帮助
+--port, -p 监听端口，默认是3000  
+--help, -h 显示帮助  
 
-下面的参数来自koa-static:
---maxage Browser cache max-age in milliseconds. defaults to 0
---hidden Allow transfer of hidden files. defaults to false
---index Default file name, defaults to 'ipndex.html'
---defer If true, serves after return next(), allowing any downstream middleware to respond first.
---gzip Try to serve the gzipped version of a file automatically when gzip is supported by a client and if the requested file with .gz extension exists. defaults to true.
+下面的参数来自koa-static:  
+--maxage Browser cache max-age in milliseconds. defaults to 0  
+--hidden Allow transfer of hidden files. defaults to false  
+--index Default file name, defaults to 'ipndex.html'  
+--defer If true, serves after return next(), allowing any downstream middleware to respond first.  
+--gzip Try to serve the gzipped version of a file automatically when gzip is supported by a client and if the requested file with .gz extension exists. defaults to true.  
 
 ## 许可
 MIT © [flowmemo](http://weibo.com/flowmemo)
