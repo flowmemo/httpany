@@ -1,5 +1,5 @@
 # httpany
-**English**|[简体中文说明](https://github.com/flowmemo/httpany/blob/master/README.zh-cn.md)  
+> **English**|[中文](https://github.com/flowmemo/httpany/blob/master/README.zh-cn.md)  
 A static file server for front-end learner.
 
 [![Travis branch](https://img.shields.io/travis/flowmemo/httpany/master.svg?style=flat-square)](https://travis-ci.org/flowmemo/httpany)
@@ -18,6 +18,8 @@ $ httpany yourDirectory
 options is: {"root":"/path/to/yourDirectory","index":"index.html"}
 ```
 Access http://localhost:3000/?foo=bar then the response header will contain `foo: bar`. 
+Access http://localhost:3000/?status=302&location=//github.com/flowmemo then your browser will be redirected to my github profile.
+
 
 Note that you can also set status code by `status` key.
 
