@@ -30,4 +30,3 @@ const port = argv.port || argv.p || 3000
 const app = createApp(rootPath, argv)
 app.listen(port)
 console.log(chalk.green(`"${argv.root}" is served on http://localhost:${port}`))
-console.log(`options is: ${JSON.stringify(argv)}`)
