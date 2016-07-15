@@ -1,5 +1,6 @@
 # httpany
 > **English**|[中文](https://github.com/flowmemo/httpany/blob/master/README.zh-cn.md)  
+
 A static file server for front-end learner.
 
 [![Travis branch](https://img.shields.io/travis/flowmemo/httpany/master.svg?style=flat-square)](https://travis-ci.org/flowmemo/httpany)
@@ -8,18 +9,18 @@ A static file server for front-end learner.
 
 ## Description
 Front-end learners often need to server static files on their computer.
-Sometimes `python3 -m http.server` is enough, but there are many situations where you may want the static server response a specific header(e.g CORS and Timing-Allow headers). This tool can make it easy by control http headers and status code using query string.
+Sometimes `python3 -m http.server` is enough, but there are many situations where you may want the static server response a specific header(e.g CORS and Timing-Allow headers).  
+This tool can make it easy by control http headers and status code using query string.
 
 ## Example
 ```shell
 $ npm install httpany -g
 $ httpany yourDirectory
-"yourDirectory" is served on http://localhost:3000
-options is: {"root":"/path/to/yourDirectory","index":"index.html"}
+# "yourDirectory" is served on http://localhost:3000
+#  options is: {"root":"/path/to/yourDirectory","index":"index.html"}
 ```
-Access http://localhost:3000/?foo=bar then the response header will contain `foo: bar`. 
+Access http://localhost:3000/?foo=bar then the response header will contain `foo: bar`.  
 Access http://localhost:3000/?status=302&location=//github.com/flowmemo then your browser will be redirected to my github profile.
-
 
 Note that you can also set status code by `status` key.
 

@@ -1,5 +1,6 @@
 # httpany
 >  [English](https://github.com/flowmemo/httpany/blob/master/README.md)|**中文**  
+
 方便前端学习者使用的静态文件服务器
 
 [![Travis branch](https://img.shields.io/travis/flowmemo/httpany/master.svg?style=flat-square)](https://travis-ci.org/flowmemo/httpany)
@@ -8,16 +9,17 @@
 
 ## 介绍
 前端学习者经常需要在电脑上托管静态文件.
-有时候一句 `python3 -m http.server` 就足够了, 但是很多情况下你会想让服务器返回特定的http header(例如CORS和Timing-Allow). 这个工具可以让你通过querystring来控制服务器响应的http header和状态码.
+有时候一句 `python3 -m http.server` 就足够了, 但是很多情况下你会想让服务器返回特定的http header(例如CORS和Timing-Allow).  
+这个工具可以让你通过querystring来控制服务器响应的http header和状态码.
 
 ## 示例
 ```shell
 $ npm install httpany -g
 $ httpany yourDirectory
-"yourDirectory" is served on http://localhost:3000
-options is: {"root":"/path/to/yourDirectory","index":"index.html"}
+# "yourDirectory" is served on http://localhost:3000
+# options is: {"root":"/path/to/yourDirectory","index":"index.html"}
 ```
-访问 http://localhost:3000/?foo=bar , http响应的header中会包含 `foo: bar`. 
+访问 http://localhost:3000/?foo=bar , http响应的header中会包含 `foo: bar`.  
 访问 http://localhost:3000/?status=302&location=//weibo.com/flowmemo , 会返回一个302页面跳转到我的微博.
 
 你也可以在querystring中设置status来控制响应的http状态码.
