@@ -11,7 +11,7 @@
     "bin"
   ],
   "scripts": {
-    "test": "nyc ava ",
+    "test": "nyc ava test/test.js",
     "lint": "eslint ./src ./test --fix"
   },
   "publishConfig": {
