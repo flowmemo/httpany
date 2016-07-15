@@ -10,6 +10,7 @@
 ## 介绍
 前端学习者经常需要在电脑上托管静态文件.
 有时候一句 `python3 -m http.server` 就足够了, 但是很多情况下你会想让服务器返回特定的http header(例如CORS和Timing-Allow).  
+
 这个工具可以让你通过querystring来控制服务器响应的http header和状态码.
 
 ## 示例
@@ -39,6 +40,9 @@ $ httpany <路径> [参数]
 --index Default file name, defaults to 'ipndex.html'  
 --defer If true, serves after return next(), allowing any downstream middleware to respond first.  
 --gzip Try to serve the gzipped version of a file automatically when gzip is supported by a client and if the requested file with .gz extension exists. defaults to true.  
+
+## 注意
+`Access-Control-Allow-Origin` 默认设置为`*`. 你可以把此项设置为`null`来禁用它.
 
 ## 许可
 MIT © [flowmemo](http://weibo.com/flowmemo)

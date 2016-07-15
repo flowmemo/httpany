@@ -10,6 +10,7 @@ A static file server for front-end learner.
 ## Description
 Front-end learners often need to server static files on their computer.
 Sometimes `python3 -m http.server` is enough, but there are many situations where you may want the static server response a specific header(e.g CORS and Timing-Allow headers).  
+
 This tool can make it easy by control http headers and status code using query string.
 
 ## Example
@@ -38,6 +39,9 @@ The following options are from koa-static:
 --index Default file name, defaults to 'ipndex.html'  
 --defer If true, serves after return next(), allowing any downstream middleware to respond first.  
 --gzip Try to serve the gzipped version of a file automatically when gzip is supported by a client and if the requested file with .gz extension exists. defaults to true.  
+
+## Note
+`Access-Control-Allow-Origin` is set to `*` by default. You can disable it by setting this field to `null`
 
 ## License
 MIT © [flowmemo](http://weibo.com/flowmemo)
