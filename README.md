@@ -30,7 +30,7 @@ Note that you can also set status code by `status` key.
 $ httpany <root path> [options]
 ```
 ### Options
---port, -p Listening port, default is 3000  
+--port, -p Listening port, the default is 3000  
 --help, -h Show help  
 
 The following options are from koa-static:  
