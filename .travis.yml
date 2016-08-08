@@ -5,7 +5,6 @@ node_js:
   - '4'
 before_install:
   - npm set progress=false
-  - npm install -g npm@latest
   - npm config ls
 script: sh test/_cli.sh
 after_success:
