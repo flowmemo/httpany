@@ -24,7 +24,7 @@
     "url": "https://github.com/flowmemo/httpany.git"
   },
   "devDependencies": {
-    "ava": "^0.17.0",
+    "ava": "^0.18.1",
     "coveralls": "^2.11.15",
     "node-fetch": "^1.6.3",
     "nyc": "^10.1.2"
