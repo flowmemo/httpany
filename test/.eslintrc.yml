@@ -2,5 +2,3 @@ extends: standard
 plugins:
   - standard
   - promise
-parserOptions:
-  sourceType: "script"
