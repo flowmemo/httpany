@@ -1,7 +1,7 @@
 {
   "name": "httpany",
-  "version": "0.1.5",
-  "description": "a static server that response headers and status by querystring",
+  "version": "0.1.6",
+  "description": "a static server that you can control response headers by querystring",
   "main": "./src/app.js",
   "bin": {
     "httpany": "./bin/cli.js"
