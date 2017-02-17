@@ -21,7 +21,7 @@ $ httpany yourDirectory
 # options is: {"root":"/path/to/yourDirectory","index":"index.html"}
 ```
 访问 http://localhost:3000/?foo=bar , http响应的header中会包含 `foo: bar`.  
-访问 http://localhost:3000/?status=302&location=//weibo.com/flowmemo , 会返回一个302页面跳转到我的微博.
+访问 http://localhost:3000/?status=302&location=https://github.com/flowmemo , 会返回一个302页面跳转到我的微博.
 
 你也可以在querystring中设置status来控制响应的http状态码.
 
@@ -31,16 +31,18 @@ $ httpany <路径> [参数]
 ```
 
 ### 参数
---port, -p 监听端口，默认是3000  
---help, -h 显示帮助  
+```
+--help, -h    显示端口
+--port, -p    监听端口, 默认3000
 
-下面的参数来自koa-static:  
---maxage Browser cache max-age in milliseconds. defaults to 0  
---hidden Allow transfer of hidden files. defaults to false  
---index Default file name, defaults to 'ipndex.html'  
---defer If true, serves after return next(), allowing any downstream middleware to respond first.  
---gzip Try to serve the gzipped version of a file automatically when gzip is supported by a client and if the requested file with .gz extension exists. defaults to true.  
-
+下面的参数来自koa-static:
+--maxage      Browser cache max-age in milliseconds. defaults to 0
+--hidden      Allow transfer of hidden files. defaults to false
+--index       Default file name, defaults to 'index.html'
+--defer       If true, serves after return next(), allowing any downstream middleware to respond first.
+--gzip        Try to serve the gzipped version of a file automatically when gzip is supported by a client and if the requested file with .gz extension exists. (defaults to true)
+--extensions  Try to match extensions from passed array to search for file when no extension is sufficed in URL. First found is served. (defaults to false)
+```
 ## 注意
 `Access-Control-Allow-Origin` 默认设置为`*`. 你可以把此项设置为`null`来禁用它.
 
