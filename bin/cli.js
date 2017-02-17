@@ -25,7 +25,8 @@ const info = `
     $ httpany webfolder --maxage 60000 --index default.html --gzip=false
 `
 if (argv._.length === 0 || argv.help || argv.h) return console.log(info)
-if (argv._.length > 1) throw Error('you can only serve one root directory!')
+if (argv._.length > 1) throw new Error('you can only serve one root directory!')
+
 const rootPath = argv._[0]
 const port = argv.port || argv.p || 3000
 const app = createApp(rootPath, argv)
