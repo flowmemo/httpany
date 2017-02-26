@@ -37,7 +37,7 @@
     "chalk": "^1.1.3",
     "koa": "^1.2.5",
     "koa-httpany": "^0.1.5",
-    "koa-static": "^2.1.0",
+    "koa-static": "^3.0.0",
     "minimist": "^1.2.0"
   }
 }
