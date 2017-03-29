@@ -17,7 +17,7 @@ This tool can make it easy to control http headers and status code by using quer
 ```shell
 $ npm install httpany -g
 $ httpany yourDirectory
-# "yourDirectory" is served on http://localhost:3000
+# "yourDirectory" is served on http://0.0.0.0:3000
 #  options is: {"root":"/path/to/yourDirectory","index":"index.html"}
 ```
 Access http://localhost:3000/?foo=bar then the response header will contain `foo: bar`.  
@@ -32,7 +32,8 @@ $ httpany <root path> [options]
 ### Options
 ```
 --help, -h    Show help
---port, -p    Listening port, default is 3000
+--port, -p    Listening port, the default is 3000
+--address, -a Listening address, the default is 0.0.0.0
 
 The following options are from koa-static:
 --maxage      Browser cache max-age in milliseconds. defaults to 0

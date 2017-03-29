@@ -17,7 +17,7 @@
 ```shell
 $ npm install httpany -g
 $ httpany yourDirectory
-# "yourDirectory" is served on http://localhost:3000
+# "yourDirectory" is served on http://0.0.0.0:3000
 # options is: {"root":"/path/to/yourDirectory","index":"index.html"}
 ```
 访问 http://localhost:3000/?foo=bar , http响应的header中会包含 `foo: bar`.  
@@ -33,7 +33,9 @@ $ httpany <路径> [参数]
 ### 参数
 ```
 --help, -h    显示端口
---port, -p    监听端口, 默认3000
+--port, -p    监听端口, 默认为3000
+--address, -a 监听地址, 默认为0.0.0.0
+
 
 下面的参数来自koa-static:
 --maxage      Browser cache max-age in milliseconds. defaults to 0

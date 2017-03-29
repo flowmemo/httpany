@@ -11,7 +11,8 @@ const info = `
 
   Options:
     --help, -h    Show help
-    --port, -p    Listening port, default is 3000
+    --port, -p    Listening port, the default is 3000
+    --address, -a Listening address, the default is 0.0.0.0
 
     The following options are from koa-static:
     --maxage      Browser cache max-age in milliseconds. defaults to 0
@@ -29,6 +30,7 @@ if (argv._.length > 1) throw new Error('you can only serve one root directory!')
 
 const rootPath = argv._[0]
 const port = argv.port || argv.p || 3000
+const address = argv.address || argv.a || '0.0.0.0'
 const app = createApp(rootPath, argv)
-app.listen(port)
-console.log(chalk.green(`"${argv.root}" is served on http://localhost:${port}`))
+app.listen(port, address)
+console.log(chalk.green(`"${argv.root}" is served on http://${address}:${port}`))
