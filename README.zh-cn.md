@@ -21,7 +21,7 @@ $ httpany yourDirectory
 # options is: {"root":"/path/to/yourDirectory","index":"index.html"}
 ```
 访问 http://localhost:3000/?foo=bar , http响应的header中会包含 `foo: bar`.  
-访问 http://localhost:3000/?status=302&location=https://github.com/flowmemo , 会返回一个302页面跳转到我的微博.
+访问 http://localhost:3000/?status=302&location=https://github.com/flowmemo , 会返回一个302页面跳转到我的GitHub.
 
 你也可以在querystring中设置status来控制响应的http状态码.
 
