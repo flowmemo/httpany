@@ -27,7 +27,7 @@
     "ava": "^0.18.1",
     "coveralls": "^2.11.16",
     "eslint": "^3.18.0",
-    "eslint-config-standard": "^6.2.1",
+    "eslint-config-standard": "^8.0.0",
     "eslint-plugin-promise": "^3.4.2",
     "eslint-plugin-standard": "^2.0.1",
     "node-fetch": "^1.6.3",
